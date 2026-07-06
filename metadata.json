@@ -1,0 +1,6 @@
+{
+  "name": "Emotion-Aware Learning Assistant",
+  "description": "An interactive, AI-powered learning support system that dynamically detects student emotion and tailors pedagogical support to maximize engagement and comprehension.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
