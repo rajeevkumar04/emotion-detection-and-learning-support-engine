@@ -66,34 +66,34 @@ Limit your response to 2 to 3 concise, beautifully formatted paragraphs of markd
   }
 
   // Graceful Local Fallback generator if API key is not configured or fails
-  const localFallbackResponses: Record<string, string[]> = {
-    Bored: [
-      `It's completely normal to feel tired, especially when a problem looks intriguing but requires a lot of energy. When a problem feels overwhelming, try to break it into tiny pieces. Just focus on understanding one small part at a time, rather than the whole. For now, prioritize resting and recharging. You can come back to this fascinating challenge when you feel more energized and ready to dive in.`,
-      `I sense that this topic might feel a bit dry or exhausting right now. Let's make it exciting! Did you know that what you're studying right now underpins some of the most advanced technology in modern satellites? Let's take a 5-minute breather, drink some water, and come back to solve it using a fun, gamified approach.`
+  const localFallbackResponses: Record<string, (field: string, problem: string, strategy: string) => string[]> = {
+    Bored: (field, problem, strategy) => [
+      `When learning ${field}, it is normal to feel drained by a challenging problem like "${problem}". Start by breaking that problem into a smaller task, then use ${strategy.toLowerCase()} to keep the process engaging. Focus on one tiny success first, and let the momentum build from there.`,
+      `This looks like a perfect moment to switch gears from intense analysis to hands-on exploration. For your ${field} challenge, try a short interactive exercise that reinforces the core idea in a playful way. ${strategy} can make the material feel less tiring and more inspiring.`
     ],
-    Frustrated: [
-      `Frustration is actually a sign that your brain is on the verge of a major breakthrough! Let's pause, take a deep breath, and reset. We can debug this step-by-step. Let's check the most common fail-points first, print out intermediate variables, and clear any syntax roadblocks together. You've got this!`,
-      `Bugs and errors are just hidden opportunities to learn how systems really work under the hood. Let's strip away the complexity. If we isolate just the single line of code or formula causing the issue, we can solve it in no time. I'm right here with you.`
+    Frustrated: (field, problem, strategy) => [
+      `Frustration means you're on the right track, especially with a difficult ${field} problem like "${problem}". Start by pausing, then use ${strategy.toLowerCase()} to simplify the issue step-by-step. Break the problem down into the smallest possible pieces, confirm each one, and avoid chasing too many answers at once.`,
+      `This ${field} challenge is causing a lot of tension, so the best solution is to lower the pressure and inspect the basics. Use ${strategy.toLowerCase()} to isolate the source of the issue, then fix one thing at a time so the whole problem becomes manageable.`
     ],
-    Confused: [
-      `It's totally okay to feel confused. Let's demystify this! Think of this concept like building a house: instead of trying to put up the roof first, we need to make sure our foundation is solid. Let's review the fundamental rules, write out a quick mental outline, and trace the logic step-by-step.`,
-      `Let's use a quick analogy. If this problem were a map, we are currently looking at the entire continent. Let's zoom in on your current street! Let's break down the syntax, write a simple pseudocode draft, and build up your confidence gradually.`
+    Confused: (field, problem, strategy) => [
+      `It is okay to feel confused by "${problem}" in ${field}. Let's treat this like a map: first locate the key concepts, then build a clear path using ${strategy.toLowerCase()}. Once the foundation is solid, the rest will begin to make sense.`,
+      `For a hard concept in ${field}, the smartest move is to slow down and simplify. Apply ${strategy.toLowerCase()} to create a visual or step-by-step explanation, then verify each point before moving forward.`
     ],
-    Curious: [
-      `That is an absolutely brilliant question! Your curiosity is your greatest superpower as a learner. Let's explore this deeply. This connects directly to advanced structures like neural embeddings and optimization functions. Here's a quick preview of how professionals leverage this concept to build scalable systems.`,
-      `I love how you're thinking about this! Since you're interested in the core mechanics, let's explore how we can optimize this further. We can look at algorithmic complexity, look up alternative paradigms, and design a custom sandbox to test your hypothesis.`
+    Curious: (field, problem, strategy) => [
+      `Your curiosity is exactly the right attitude for a question like "${problem}". Use ${strategy.toLowerCase()} to dig deeper into the mechanics of ${field}, then follow up with a small challenge or extension to keep your learning momentum strong.`,
+      `Because you're excited about ${field}, try exploring the concept from multiple angles. ${strategy} is a great way to move beyond the immediate problem and discover why it matters in real systems and real-world applications.`
     ],
-    Anxious: [
-      `Take a deep, slow breath. There is absolutely no rush here, and making mistakes is a crucial part of becoming an expert. Let's lower the pressure completely. We don't need to write the perfect solution right away—let's just write one simple line of code or one basic formula that works, and build from there.`,
-      `You are doing much better than you realize! Let's focus on small, low-stakes wins. We can write a tiny test case, verify it passes, and celebrate that step. I'm here to support you at whatever pace you need.`
+    Anxious: (field, problem, strategy) => [
+      `When anxiety is present, the best solution is reassurance plus a gentle step. For your ${field} problem, start with the simplest possible version and use ${strategy.toLowerCase()} to keep the pace calm and safe. Small, successful steps are the fastest path to confidence.`,
+      `This ${field} challenge feels heavy, so the most helpful thing is to reduce the scope. Apply ${strategy.toLowerCase()} with a low-pressure example, then build from that success rather than trying to solve everything at once.`
     ],
-    Neutral: [
-      `Excellent baseline. Let's continue with our structured progression. We will examine the core challenge, write out the solution steps, and run a validation check to make sure our assumptions are correct. What specific aspect should we target first?`,
-      `With a clear and focused mind, we can make great progress today. Let's dive straight into the logic, outline the primary objectives, and solve this challenge systematically.`
+    Neutral: (field, problem, strategy) => [
+      `This is a good moment to stay focused and systematic. For a ${field} problem like "${problem}," use ${strategy.toLowerCase()} to organize the solution into clear, sequential steps. Confirm each part as you go and keep the momentum steady.`,
+      `A neutral state is ideal for precise progress. Follow a clean plan: define the goal, break the problem into parts, and use ${strategy.toLowerCase()} to make the next move straightforward and effective.`
     ]
   };
 
-  const list = localFallbackResponses[emotion] || localFallbackResponses.Neutral;
+  const list = (localFallbackResponses[emotion] || localFallbackResponses.Neutral)(field, problem, strategy);
   const selectedResponse = list[Math.floor(Math.random() * list.length)];
 
   res.json({
