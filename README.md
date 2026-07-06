@@ -147,7 +147,7 @@ Create a `.env` file in the project root and add your API key if required.
 Example:
 
 ```env
-GEMINI_API_KEY=AQ.Ab8RN6Iy_ADb4ohQi5yqS3XbudyaNd3enpq8d_gn3xIL9AsSUA
+GEMINI_API_KEY="Enter your API Key"
 ```
 
 ---
