@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Emotion-Aware Learning Assistant 🤖
 
 An advanced cognitive analytics system featuring an ensemble of **BiLSTM** and **BERT** models to track and analyze student emotional states across various academic disciplines. Built using React, TypeScript, Tailwind CSS, Express, and Google Gemini API integration.
@@ -96,3 +97,6 @@ To spin up the production instance, run:
 ```bash
 npm start
 ```
+=======
+### EMOTION DETECTION AAND LEARNING SUPPORT ENGINE PROJECT
+>>>>>>> 5668079a12c18afc9afc193c135e5693820d8913
