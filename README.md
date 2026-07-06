@@ -147,7 +147,7 @@ Create a `.env` file in the project root and add your API key if required.
 Example:
 
 ```env
-GEMINI_API_KEY=YOUR_API_KEY
+GEMINI_API_KEY=AQ.Ab8RN6Iy_ADb4ohQi5yqS3XbudyaNd3enpq8d_gn3xIL9AsSUA
 ```
 
 ---
@@ -178,10 +178,17 @@ npm run dev
 The frontend will run at:
 
 ```text
-http://localhost:5173
+http://127.0.0.1:3000/
 ```
 
 ---
+## 🌐 Live Demo
+
+Frontend:
+https://emotion-detection-and-learning-supp-seven.vercel.app/
+
+Backend API:
+https://emotion-detection-and-learning-support.onrender.com
 
 ## 🔄 Workflow
 
@@ -235,20 +242,19 @@ http://localhost:5173
 ## 📸 Screenshots
 
 ### Home Page
-
-*Add screenshot here*
+<img width="1905" height="972" alt="image" src="https://github.com/user-attachments/assets/3245b181-93e9-4948-a9eb-bc83b8574162" />
+### Login Page
+<img width="1916" height="965" alt="image" src="https://github.com/user-attachments/assets/f854dfa9-4747-4993-8dfb-1b628c5898f6" />
 
 ### Emotion Detection
 
-*Add screenshot here*
+<img width="1285" height="907" alt="image" src="https://github.com/user-attachments/assets/e531ab93-cc13-4d20-94df-f630409c202d" />
 
-### Learning Recommendations
-
-*Add screenshot here*
 
 ### Dashboard
 
-*Add screenshot here*
+<img width="1312" height="662" alt="image" src="https://github.com/user-attachments/assets/c8eb4a75-9ef6-4f1e-bebc-69f3da105ee0" />
+
 
 ---
 
