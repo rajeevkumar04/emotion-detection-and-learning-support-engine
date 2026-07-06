@@ -1,102 +1,283 @@
-<<<<<<< HEAD
-# Emotion-Aware Learning Assistant 🤖
+# Emotion Detection and Learning Support Engine 🎭📚
 
-An advanced cognitive analytics system featuring an ensemble of **BiLSTM** and **BERT** models to track and analyze student emotional states across various academic disciplines. Built using React, TypeScript, Tailwind CSS, Express, and Google Gemini API integration.
-
-## Key Features
-
-- **Double Model Telemetry**: Displays parallel emotional classifications (BERT & BiLSTM) with confidence levels.
-- **Emotion Distribution Bar Charts**: Interactive statistical breakdowns of user learning emotions.
-- **Emotional Journey Tracking**: Real-time logging of cognitive state changes.
-- **State-Based Multi-User Authentication**: High-fidelity local profile creation with customized color aura selections. Persistent database syncing per-user.
-- **Custom Feedback Visualizer**: Responsive interactive components displaying custom analytical responses depending on learning emotions.
+An AI-powered web application that detects students' emotions through facial expressions and provides personalized learning support based on their emotional state. The system combines Artificial Intelligence, Machine Learning, and Modern Web Technologies to enhance the online learning experience by recognizing emotions in real time and recommending suitable learning resources and motivational feedback.
 
 ---
 
-## 🚀 How to Run in VS Code
+## 📖 Project Overview
 
-Follow these simple steps to run the complete full-stack workspace locally on your computer.
+The **Emotion Detection and Learning Support Engine** is an intelligent learning assistant designed to improve students' academic performance by understanding their emotional state during learning sessions.
 
-### Prerequisites
-
-Ensure you have the following installed on your machine:
-- **Node.js** (v18 or higher recommended)
-- **npm** (comes packaged with Node.js)
-- **VS Code** (visual code editor)
+Using a webcam, the application captures facial expressions, detects emotions using an AI model, and generates personalized learning recommendations. The system also records emotion history, enabling learners and educators to analyze emotional trends over time.
 
 ---
 
-### Step 1: Clone or Copy the Folder
-Open the project directory in VS Code:
-1. Launch **VS Code**.
-2. Go to **File** -> **Open Folder...** and select this directory.
+## ✨ Features
+
+* 🎭 Real-time facial emotion detection
+* 📷 Webcam-based emotion recognition
+* 🤖 AI-powered learning recommendations
+* 📚 Personalized study suggestions
+* 📊 Emotion analytics dashboard
+* 📈 Emotion history tracking
+* 🔒 User authentication
+* 🌙 Responsive and modern user interface
+* ⚡ Fast and interactive performance
+* 💡 Intelligent learning assistance
 
 ---
 
-### Step 2: Install Dependencies
-Open the VS Code Terminal (`Ctrl + ` ` ` or `Cmd + ` ` ` / **Terminal** -> **New Terminal**) and run:
+## 🛠️ Technologies Used
+
+### Frontend
+
+* React.js
+* TypeScript
+* Vite
+* Tailwind CSS
+* HTML5
+* CSS3
+
+### Backend
+
+* Python
+* FastAPI
+
+### Artificial Intelligence & Machine Learning
+
+* TensorFlow
+* OpenCV
+* MediaPipe
+* NumPy
+
+### Development Tools
+
+* Visual Studio Code
+* Git
+* GitHub
+
+---
+
+## 📁 Project Structure
+
+```text
+emotion-aware-learning-assistant/
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── AuthModal.tsx
+│   │   ├── EmotionHeatmap.tsx
+│   │   ├── Navbar.tsx
+│   │   └── OpAmpFeedbackVisualizer.tsx
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── types.ts
+│
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── emotion_model.py
+│   └── utils.py
+│
+├── package.json
+├── package-lock.json
+├── vite.config.ts
+├── tsconfig.json
+├── tsconfig.node.json
+├── tailwind.config.js
+├── postcss.config.js
+├── index.html
+├── .gitignore
+├── .env.example
+└── README.md
+```
+
+---
+
+## ⚙️ Prerequisites
+
+Before running the project, ensure the following software is installed:
+
+* Node.js (v18 or later)
+* npm
+* Python 3.11+
+* pip
+* Git
+* Visual Studio Code
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/rajeevkumar04/emotion-detection-and-learning-support-engine.git
+```
+
+### 2. Navigate to the Project
+
+```bash
+cd emotion-detection-and-learning-support-engine
+```
+
+### 3. Install Frontend Dependencies
+
 ```bash
 npm install
 ```
 
----
+### 4. Install Backend Dependencies
 
-### Step 3: Configure Environment Variables
-Create a file named `.env` in the root directory (the same level as `package.json`). Add your Gemini API key:
-```env
-GEMINI_API_KEY=your_actual_gemini_api_key_here
+```bash
+cd backend
+pip install -r requirements.txt
+cd ..
 ```
-> *Note: If you do not have a Gemini API key yet, you can get one for free at [Google AI Studio](https://aistudio.google.com).*
+
+### 5. Configure Environment Variables
+
+Create a `.env` file in the project root and add your API key if required.
+
+Example:
+
+```env
+GEMINI_API_KEY=YOUR_API_KEY
+```
 
 ---
 
-### Step 4: Launch Dev Servers
-To run both the **Vite Client** and the **Express Backend Proxy** concurrently, run the following single command in the terminal:
+## ▶️ Running the Application
+
+### Start the Backend
+
+```bash
+cd backend
+uvicorn app:app --reload
+```
+
+The backend will run at:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Start the Frontend
+
+Open another terminal:
+
 ```bash
 npm run dev
 ```
 
-The system will initialize and run on:
-- **Local Application Link**: [http://localhost:3000](http://localhost:3000)
-
-Open your web browser and navigate to the link above to experience the complete stunning live dashboard!
-
----
-
-## 📁 File Structure
+The frontend will run at:
 
 ```text
-├── src/
-│   ├── components/
-│   │   ├── AuthModal.tsx                  # Beautiful multi-user login & register interface
-│   │   ├── EmotionHeatmap.tsx             # Interactive heatmap components
-│   │   ├── OpAmpFeedbackVisualizer.tsx    # Responsive interactive visuals
-│   │   └── Navbar.tsx                     # Core navigation controls
-│   ├── App.tsx                            # Core React layout, states, and telemetry charts
-│   ├── main.tsx                           # React rendering mount point
-│   ├── index.css                          # Global Tailwind imports & typography theme variables
-│   └── types.ts                           # Shared strict TypeScript schemas
-├── server.ts                              # Express server proxy with integrated Vite middleware
-├── package.json                           # Workspace scripts & npm library dependencies
-├── vite.config.ts                         # Custom Vite bundler settings
-├── tsconfig.json                          # TypeScript compilation options
-└── README.md                              # This setup manual
+http://localhost:5173
 ```
 
 ---
 
-## 🛠️ Production Build & Container Deployment
+## 🔄 Workflow
 
-To compile and bundle both the client assets and the server for professional hosting, execute:
-```bash
-npm run build
-```
-This compiles the entire frontend into `dist/` and compiles the backend into a single bundled `dist/server.cjs` file using `esbuild`.
+1. User opens the application.
+2. User signs in to the platform.
+3. Webcam captures facial expressions.
+4. AI model processes the image.
+5. Emotion is detected.
+6. Personalized learning recommendations are generated.
+7. Results are displayed on the dashboard.
+8. Emotion records are stored for future analysis.
 
-To spin up the production instance, run:
-```bash
-npm start
-```
-=======
-### EMOTION DETECTION AAND LEARNING SUPPORT ENGINE PROJECT
->>>>>>> 5668079a12c18afc9afc193c135e5693820d8913
+---
+
+## 📊 Supported Emotions
+
+* 😊 Happy
+* 😢 Sad
+* 😠 Angry
+* 😨 Fear
+* 😲 Surprise
+* 😐 Neutral
+* 🤢 Disgust
+
+---
+
+## 🎯 Applications
+
+* Smart Education
+* Online Learning Platforms
+* Student Mental Well-being
+* Personalized Learning Systems
+* Academic Performance Analysis
+* AI-based Learning Assistance
+
+---
+
+## 🚀 Future Enhancements
+
+* Voice emotion recognition
+* Mobile application
+* Multi-language support
+* Teacher analytics dashboard
+* Cloud deployment
+* Advanced AI recommendation engine
+* Student performance prediction
+* Learning progress visualization
+
+---
+
+## 📸 Screenshots
+
+### Home Page
+
+*Add screenshot here*
+
+### Emotion Detection
+
+*Add screenshot here*
+
+### Learning Recommendations
+
+*Add screenshot here*
+
+### Dashboard
+
+*Add screenshot here*
+
+---
+
+## 👨‍💻 Author
+
+**Rajeev Kumar**
+
+GitHub: https://github.com/rajeevkumar04
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a new branch.
+3. Commit your changes.
+4. Push to your branch.
+5. Create a Pull Request.
+
+---
+
+## 📄 License
+
+This project is developed for educational and internship purposes.
+
+---
+
+## ⭐ Acknowledgements
+
+Special thanks to the open-source community and the developers of TensorFlow, OpenCV, MediaPipe, React, FastAPI, and Vite for providing the tools and frameworks that made this project possible.
